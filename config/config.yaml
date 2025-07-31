@@ -1,0 +1,58 @@
+api:
+  max_retries: 3
+  rate_limit_per_minute: 15
+  timeout_seconds: 30
+  # Gemini thinking configuration
+  # thinking_budget: null = default thinking, 0 = no thinking, >0 = limited thinking
+  thinking_budget: null
+datasets:
+  ARC_Challenge:
+    format: json
+    path: dataset/ARC_Challenge/arc_challenge.json
+    type: multiple_choice
+  AddSub:
+    format: json
+    path: dataset/AddSub/AddSub.json
+    type: numeric
+  BoolQ:
+    format: json
+    path: dataset/BoolQ/boolq.json
+    type: binary
+  CommonsenseQA:
+    format: jsonl
+    path: dataset/CommonsenseQA/dev_rand_split.jsonl
+    type: multiple_choice
+  GSM8K:
+    format: json
+    path: dataset/GSM8K/gsm8k.json
+    type: numeric
+  MultiArith:
+    format: json
+    path: dataset/MultiArith/MultiArith.json
+    type: numeric
+  SingleEq:
+    format: json
+    path: dataset/SingleEq/questions.json
+    type: numeric
+  Winogrande:
+    format: json
+    path: dataset/Winogrande/winogrande.json
+    type: multiple_choice
+  coin_flip:
+    format: json
+    path: dataset/coin_flip/coin_flip.json
+    type: binary
+  grade-school-math:
+    format: jsonl
+    path: dataset/grade-school-math/test.jsonl
+    type: numeric
+  last_letters:
+    format: json
+    path: dataset/last_letters/last_letters.json
+    type: letters
+logging:
+  log_file: logs/benchmark_results.log
+  log_level: INFO
+models:
+- gemini-2.5-flash
+- gemini-2.5-pro
